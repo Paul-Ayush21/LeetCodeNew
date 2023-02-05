@@ -12,7 +12,7 @@ public:
                 int high = nums.size()-1;
                 // int sum = 0-
                 while(low<high){
-                    if(nums[low]+nums[high]==(0-nums[i])){
+                    if(nums[low]+nums[high]==(-nums[i])){
                         vector<int> temp;
                         temp.push_back(nums[i]);
                         temp.push_back(nums[low]);
@@ -24,7 +24,7 @@ public:
                         low++;
                         high--;
                     }
-                    else if(nums[low]+nums[high]>(0-nums[i])){
+                    else if(nums[low]+nums[high]>(-nums[i])){
                         high--;
                     }
                     else{

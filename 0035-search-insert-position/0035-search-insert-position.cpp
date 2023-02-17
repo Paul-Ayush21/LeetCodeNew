@@ -11,22 +11,19 @@ public:
             return nums.size();
         }
         int low=0,high=nums.size()-1;
-        while(low<high){
+        while(low<=high){
             int mid=(low+high)/2;
             if(target==nums[mid]){
-                cout<<low<<endl;
-                cout<<high;
+                
                 return mid;
             }
             else if(target>nums[mid]){
-                low++;
+                low=mid+1;
             }
             else{
-                high--;
+                high=mid-1;
             }
         }
-        // cout<<low<<endl;
-        // cout<<high;
         return low++;
     }
 };

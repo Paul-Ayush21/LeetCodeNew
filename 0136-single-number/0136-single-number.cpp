@@ -1,10 +1,10 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        int ans=0;
-        for(int i=0;i<nums.size();i++){
-            ans= ans^nums[i];
+        int k=0;
+        for(auto it:nums){
+            k=k^it;
         }
-        return ans;
+        return k;
     }
 };

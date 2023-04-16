@@ -1,41 +1,102 @@
 class Solution {
 public:
     int addMinimum(string word) {
-        int count=0;
+        int sum=0;
         int i=0;
+        int n=word.length();
         while(i<word.length()){
-            if(i==word.length()-1){
-                count+=2;
+            int count=0;
+            if(i<n && word[i]=='a'){
                 i++;
+                count++;
             }
-            else if(word[i]==word[i+1]){
-                // cout<<"in";
-                count+=2;
+            
+            if(i<n && word[i]=='b'){
                 i++;
+                count++;
             }
-            else if(word[i]=='a' && word[i+1]=='b'){
-                if(word[i+2]=='c'){i+=3;}
-                else{count++; i+=2;}
-            }
-            else if(word[i]=='a' && word[i+1]=='c'){
-                count+=1; 
-                i+=2;
-            }
-            else if(word[i]=='b' && word[i+1]=='a'){
-                count+=2; 
+            
+            if(i<n && word[i]=='c'){
                 i++;
+                count++;
             }
-            else if(word[i]=='b' && word[i+1]=='c'){
-                count++; 
-                i+=2;
-            }
-            else if(word[i]=='c'){
-                count+=2; 
-                i++;
-            }
-            // i++;
+           
+            
+            sum+=3-count;
+            
         }
-        return count;
+        return sum;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // int count=0;
+        // int i=0;
+        // while(i<word.length()){
+        //     if(i==word.length()-1){
+        //         count+=2;
+        //         i++;
+        //     }
+        //     else if(word[i]==word[i+1]){
+        //         // cout<<"in";
+        //         count+=2;
+        //         i++;
+        //     }
+        //     else if(word[i]=='a' && word[i+1]=='b'){
+        //         if(word[i+2]=='c'){i+=3;}
+        //         else{count++; i+=2;}
+        //     }
+        //     else if(word[i]=='a' && word[i+1]=='c'){
+        //         count+=1; 
+        //         i+=2;
+        //     }
+        //     else if(word[i]=='b' && word[i+1]=='a'){
+        //         count+=2; 
+        //         i++;
+        //     }
+        //     else if(word[i]=='b' && word[i+1]=='c'){
+        //         count++; 
+        //         i+=2;
+        //     }
+        //     else if(word[i]=='c'){
+        //         count+=2; 
+        //         i++;
+        //     }
+        //     // i++;
+        // }
+        // return count;
         
         
         

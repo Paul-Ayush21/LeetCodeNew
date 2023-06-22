@@ -9,7 +9,7 @@ public:
             }
         }
         if(count==0){
-            s[s.size()-1]='z';
+            s[ind-1]='z';
             return s;
         }
         for(ind;ind<s.size();ind++){

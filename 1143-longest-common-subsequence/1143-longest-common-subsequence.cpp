@@ -31,6 +31,26 @@ public:
                 else dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
             }
         }
+        
+        
+        int i=text1.size(),j=text2.size();
+        string f="";
+        while(i>0 && j>0){
+            if(text1[i-1]==text2[j-1]){
+                f=text1[i-1]+f;
+                i--;
+                j--;
+            }
+            else{
+                if(dp[i-1][j]>dp[i][j-1]){
+                    i--;
+                }
+                else{
+                    j--;
+                }
+            }
+        }
+        cout<<f;
         return dp[text1.size()][text2.size()];
     }
 };

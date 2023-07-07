@@ -14,6 +14,38 @@ public:
         
     }
     int lengthOfLIS(vector<int>& nums) {
+        
+        // vector<int> dp(nums.size(),1), hash;
+        // for(int i=0;i<nums.size();i++){
+        //     hash.push_back(i);
+        // }
+        // int maxi=1;
+        // for(int i=0;i<nums.size();i++){
+        //     for(int j=0;j<i;j++){
+        //         if(nums[i]>nums[j]){
+        //             dp[i]=max(dp[i],1+dp[j]);
+        //             hash[i]=j;
+        //         }
+        //         maxi=max(maxi,dp[i]);
+        //     }
+        // }
+        // int maxiInd=max_element(dp.begin(),dp.end())-dp.begin();
+        // vector<int> temp;
+        // temp.push_back(nums[maxiInd]);
+        // for(int i=1;i<maxi;i++){
+        //     temp.push_back(nums[hash[maxiInd]]);
+        //     maxiInd=hash[maxiInd];
+        // }
+        // reverse(temp.begin(),temp.end());
+        // for(auto it: temp){
+        //     cout<<it<<" ";
+        // }
+        
+        // return maxi;
+        
+        
+        
+        
         vector<vector<int>> dp(nums.size(),vector<int>(nums.size()+1,-2));
         return f(0,-1,nums,dp);
         

@@ -23,7 +23,7 @@ public:
                 curr->right=curr->left;
                 curr->left=NULL;
             }
-            curr=curr->right;
+            else curr=curr->right;
         }
     }
 };

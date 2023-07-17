@@ -24,7 +24,7 @@ public:
         return dp[sInd][pInd]=false;
     }
     bool isMatch(string s, string p) {
-        vector<vector<bool>> dp(s.size()+1,vector<bool>(p.size()+1,false));
+        vector<vector<int>> dp(s.size()+1,vector<int>(p.size()+1,-1));
         
         dp[0][0]=true;
         for(int i=1;i<=s.size();i++){

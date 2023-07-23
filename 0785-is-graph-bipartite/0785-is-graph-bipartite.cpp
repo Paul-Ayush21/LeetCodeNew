@@ -1,5 +1,17 @@
 class Solution {
 private:
+    
+    bool dfs(int src,int color, vector<vector<int>>& graph, vector<int>& vis){
+        vis[src]=color;
+        for(auto it:graph[src]){
+            if(vis[it]==-1){
+                if(dfs(it,!color,graph,vis)==false) return false;
+            }
+            else if(vis[it]==vis[src]) return false;
+        }
+        return true;
+    }
+    
     bool bfs(int src,vector<vector<int>>& graph, vector<int>& vis){
         queue<int> q;
         q.push(src);
@@ -31,7 +43,7 @@ public:
         for(auto it: graph){
             for(auto i:it){
                 if(vis[i]==-1){
-                    if(bfs(i,graph,vis)==false) return false;
+                    if(dfs(i,0,graph,vis)==false) return false;
                 }
             }
         }

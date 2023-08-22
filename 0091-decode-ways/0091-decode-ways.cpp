@@ -10,7 +10,17 @@ public:
         return dp[ind]=res;
     }
     int numDecodings(string s) {
-        vector<int> dp(s.size()+1,-1);
-        return f(0,s,dp);
+        vector<int> dp(s.size()+1,0);
+        
+        dp[s.size()]=1;
+        
+        for(int i=s.size()-1;i>=0;i--){
+            if(s[i]=='0') continue;
+            int res=dp[i+1];
+            if(i+1<s.size() && (s[i]=='1' || (s[i]=='2' && s[i+1]<'7'))) res+=dp[i+2];
+            dp[i]=res;
+        }
+        return dp[0];
+        // return f(0,s,dp);
     }
 };
